@@ -1,0 +1,29 @@
+{
+  "name": "antena",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack",
+    "debug": "webpack --devtool source-map",
+    "test": "mocha",
+    "deploy": "aws s3 sync ./public s3://breaknews.link/ --delete",
+    "st-deploy": "aws s3 sync ./public s3://staging-breaknews.link/ --delete"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "jquery-inview": "^1.1.2",
+    "jsdom": "^15.0.0",
+    "pubsub-js": "^1.7.0",
+    "pulltorefreshjs": "^0.1.16"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "jsdoc": "^3.6.2",
+    "mocha": "^6.1.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
+}

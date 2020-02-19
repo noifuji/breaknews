@@ -1,0 +1,88 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow: auto;
+}
+
+.toolbar {
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+}
+
+.tabbar {
+  position : fixed;
+}
+.sp-view {
+  margin-top: 56px;
+  /*margin-bottom: 56px;*/
+  background-color: #eee;
+}
+
+.hide {
+  display:none;
+}
+
+.card-with-thumbnail {
+  display: grid;
+  grid-template-rows: auto 15px;
+  grid-template-columns: 50% 1fr;
+  grid-template-areas: "areaA areaB" "areaA areaC";
+  padding: 4px;
+  margin: 4px;
+}
+
+.card-without-thumbnail {
+  display: grid;
+  grid-template-rows: auto 15px;
+  grid-template-columns: auto;
+  grid-template-areas: "areaB" "areaC";
+  padding: 4px;
+  margin: 4px;
+}
+
+.load_old_articles {
+  background-color: #eee;
+  vertical-align:middle;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  padding: 4px;
+  margin: 4px;
+}
+
+.article-thumbnail {
+  grid-area: areaA;
+}
+
+.article-thumbnail-image {
+  width: 100%;
+  height: auto;
+}
+
+.article-title {
+  grid-area: areaB;
+  letter-spacing: -1px;
+  line-height: normal;
+  font-size: small;
+  padding-left: 4px;
+  font-weight: bolder;
+
+}
+
+.article-info {
+  grid-area: areaC;
+  font-size: x-small;
+  text-align: left;
+  line-height: normal;
+  align-self: end;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 4px
+}
+
+a {
+  text-decoration: none;
+}
