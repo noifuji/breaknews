@@ -2,7 +2,7 @@
 
 
 // CODELAB: Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v2';
+const CACHE_NAME = 'static-cache-v5';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
 // CODELAB: Add list of files to cache here.
@@ -17,7 +17,10 @@ const FILES_TO_CACHE = [
     './img/ic_launcher_72.png',
     './img/ic_launcher_96.png',
     './js/app.bundle.js',
-    './stylesheets/style.css'
+    './js/onsenui.min.js',
+    './stylesheets/style.css',
+    './stylesheets/onsen-css-components.min.css',
+    './stylesheets/onsenui.css'
 ];
 
 self.addEventListener('install', (evt) => {
@@ -26,7 +29,7 @@ self.addEventListener('install', (evt) => {
     evt.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             console.log('[ServiceWorker] Pre-caching offline page');
-            return cache.addAll(FILES_TO_CACHE.map(url => new Request(url, {mode: 'no-cors'})));
+            return cache.addAll(FILES_TO_CACHE);
         })
     );
 
