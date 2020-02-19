@@ -28,5 +28,11 @@ var DATA_SOURCE = {
     FAKE : "fake"
 };
 
+var APP = {
+    TITLE : "Break News",
+    VERSION : "1.0.1"
+};
+
 module.exports.GET_ARTICLES = GET_ARTICLES;
 module.exports.DATA_SOURCE = DATA_SOURCE;
+module.exports.APP = APP;

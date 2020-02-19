@@ -1,9 +1,9 @@
-/* global $, cards */
+/* global $ */
 //var ons = require('../../node_modules/onsenui/css/onsenui.css');
 //var ons_com = require('../../node_modules/onsenui/css/onsen-css-components.min.css');
 var model = require("./model.js");
 var cards = require("./cards.js");
-const PullToRefresh = require('pulltorefreshjs');
+const config = require('./config.js');
 
 //VARIABLES
 var initModule, setJqueryMap, jqueryMap,
@@ -14,7 +14,7 @@ var initModule, setJqueryMap, jqueryMap,
 var main_html = String() +
     '<div class="toolbar toolbar--material">' +
     '<div class="toolbar__center toolbar--material__center">' +
-    'Break News' +
+    config.APP.TITLE + ' ' + config.APP.VERSION +
     '</div>' +
     '</div>' +
     '<div class="sp-view container">' +
