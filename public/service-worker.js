@@ -8,16 +8,16 @@ const DATA_CACHE_NAME = 'data-cache-v1';
 // CODELAB: Add list of files to cache here.
 const FILES_TO_CACHE = [
     './',
-    './index.html'
-//    '/img/favicon.ico',
-//    '/img/ic_launcher_144.png',
-//    '/img/ic_launcher_192.png',
-//    '/img/ic_launcher_36.png',
-//    '/img/ic_launcher_48.png',
-//    '/img/ic_launcher_72.png',
-//    '/img/ic_launcher_96.png',
-//    '/js/app.bundle.js',
-//    '/stylesheets/style.css'
+    './index.html',
+    './img/favicon.ico',
+    './img/ic_launcher_144.png',
+    './img/ic_launcher_192.png',
+    './img/ic_launcher_36.png',
+    './img/ic_launcher_48.png',
+    './img/ic_launcher_72.png',
+    './img/ic_launcher_96.png',
+    './js/app.bundle.js',
+    './stylesheets/style.css'
 ];
 
 self.addEventListener('install', (evt) => {
@@ -53,5 +53,13 @@ self.addEventListener('activate', (evt) => {
 self.addEventListener('fetch', (evt) => {
     console.log('[ServiceWorker] Fetch', evt.request.url);
     // CODELAB: Add fetch event handler here.
-
+  
+  evt.respondWith(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(evt.request)
+          .then((response) => {
+            return response || fetch(evt.request);
+          });
+    })
+);
 });
